@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 500px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.input {
+    font-size: 24px;
+    padding: 10px;
+    width: 300px;
+    text-align: center; 
+    margin: 10px;
+}
