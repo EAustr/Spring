@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/regCSS.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <p><a href="/">Back</a></p>
+    <h2>Reģistrācija: <h2>
+
+        <form action="/registration" method="POST" th:object="${student}">
+
+        <label for="name">Name: </label>
+        <input type="text" id = "name" placeholder="Ievadiet savu vārdu" minlength="4" maxlength="30" th:field="*{name}"><br>
+        
+        <p
+            class = "error"
+            th:errors = "*{name}"
+            th:if = "${#fields.hasErrors('name')}">
+        </p>
+
+        <label for="surname">Surname: </label><br>
+        <input type="text" id = surname placeholder="Ievadiet savu uzvārdu" minlength="4" maxlength="30" th:field="*{surname}"><br>
+
+        <label for="group">Group: </label><br>
+        <select name="" id="group" th:field = "*{group}">
+            <option value="DP2-1">DP2-1</option>
+            <option value="DP2-2">DP2-2</option>
+            <option value="DP2-3">DP2-3</option>
+            <option value="DP2-4">DP2-4</option>
+        </select><br>
+
+        <label for="Age">Age</label><br>
+        <input type="number" id="Age" min="6" max="100" th:field="*{age}"><br>
+
+        <label for="day">Day</label>
+        <input type="date" id="day" placeholder="Ievadiet savu dzimšanas gadu" th:field="*{day}"><br>
+
+        <input type="submit" value="Reģistrēties">
+
+    </form>
+    
+</body>
+</html>

@@ -9,6 +9,14 @@ public class Money {
         this.cents = cents;
     }
 
+    public Money(int euros) {
+        this(euros, 0);
+    }
+
+    public Money(){
+        this(0, 0);
+    }
+
     public int euros() {
         return euros;
     }
@@ -64,5 +72,35 @@ public class Money {
         }
         Money newMoney = new Money(newEuros, newCents);
         return newMoney;
+    }
+
+    public Money plus(int addition, int cents){
+        Money newMoney = new Money(this.euros + addition, this.cents);
+        return newMoney;
+    }
+    public Money plus(byte cents){
+        int newCents = this.cents + cents;
+        int newEuros = this.euros;
+        if (newCents >= 100){
+            newEuros += 1;
+            newCents -= 100;
+        }
+        Money newMoney = new Money(newEuros, newCents);
+        return newMoney;
+    }
+
+    public boolean equals(Object compared){
+        if (this == compared){
+            return true;
+        }
+        if (!(compared instanceof Money)){
+            return false;
+        }
+        
+        Money comparedMoney = (Money) compared;
+        if (this.euros == comparedMoney.euros && this.cents == comparedMoney.cents){
+            return true;
+        }
+        return false;
     }
 }

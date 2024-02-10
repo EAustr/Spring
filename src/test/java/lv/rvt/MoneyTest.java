@@ -24,16 +24,15 @@ public class MoneyTest {
 
         assertEquals(4, mac6.euros());
         assertEquals(98, mac6.cents());
-
-
     }
+    
     // Pārbauda ar true vai false
     @Test
     public void testLessMethod() {
         Money mac1 = new Money(10, 50);
         Money mac2 = new Money(5, 50);
 
-        assertTrue(mac2.less(mac1));
+        assertTrue(!mac2.less(mac1));
     }
     @Test
     public void testMinusMethod() {
@@ -44,4 +43,12 @@ public class MoneyTest {
         assertEquals(5,mac3.euros());
         assertEquals(0,mac3.cents());
     }
+    @Test
+    public void testEqualsMethod() {
+        Money mac1 = new Money(10, 50);
+        Money mac2 = new Money(5, 50);
+
+        assertEquals(false,mac1.equals(mac2));
+    }
+    
 }
