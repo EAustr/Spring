@@ -74,6 +74,7 @@ public class Money {
         return newMoney;
     }
 
+    // Pievieno maciņam eiro un centus
     public Money plus(int addition, int cents){
         Money newMoney = new Money(this.euros + addition, this.cents);
         return newMoney;
@@ -89,6 +90,7 @@ public class Money {
         return newMoney;
     }
 
+    // Salīdzina divus maciņus
     public boolean equals(Object compared){
         if (this == compared){
             return true;
