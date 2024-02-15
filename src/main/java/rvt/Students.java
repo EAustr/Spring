@@ -3,7 +3,7 @@ package rvt;
 import jakarta.validation.constraints.NotEmpty;
 
 
-public class Student {
+public class Students {
 
     @NotEmpty(message = "Name is required")
     private String name;
@@ -17,7 +17,7 @@ public class Student {
 
     private String day;
 
-    public Student(String name, String surname, String group, int age, String day) {
+    public Students(String name, String surname, String group, int age, String day) {
         this.name = name;
         this.surname = surname;
         this.group = group;
@@ -25,7 +25,7 @@ public class Student {
         this.day = day;
     }
 
-    public Student() {
+    public Students() {
     }
 
     public String getName() {

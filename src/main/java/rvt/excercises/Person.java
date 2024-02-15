@@ -30,6 +30,5 @@ public class Person {
                 ", address='" + address + '\'' +
                 "}";
     }
-
     
 }

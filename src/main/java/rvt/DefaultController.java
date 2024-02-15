@@ -38,7 +38,7 @@ public class DefaultController {
 
     @GetMapping(value = "/registration")
     public String register(HttpServletRequest request, Model model){
-        model.addAttribute("student", new Student());
+        model.addAttribute("student", new Students());
         if (request.getParameter("success") != null) {
             return "registration-success";
         }
@@ -46,7 +46,7 @@ public class DefaultController {
     }
 
     @PostMapping(value = "/registration")
-    public String register(@Valid @ModelAttribute("student") Student student, BindingResult bindingResult) {
+    public String register(@Valid @ModelAttribute("student") Students student, BindingResult bindingResult) {
         
         if (bindingResult.hasErrors()) {
             return "registration";
